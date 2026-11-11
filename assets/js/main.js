@@ -77,10 +77,11 @@
     };
     var kommend = alle.filter(function (x) { return x.en >= jetzt; }).sort(function (a, b) { return a.s - b.s; });
     var vorbei = alle.filter(function (x) { return x.en < jetzt; }).sort(function (a, b) { return b.s - a.s; });
-    var html = '<h2 class="jahr">Demnächst</h2>';
-    html += kommend.length
-      ? '<ul class="events">' + kommend.map(function (x) { return karte(x, true); }).join("") + "</ul>"
-      : '<p class="leer">Keine bevorstehenden Veranstaltungen</p>';
+    var html = "";
+    if (kommend.length) {
+      html += '<h2 class="jahr">Demnächst</h2><ul class="events">' + kommend.map(function (x) { return karte(x, true); }).join("") + "</ul>";
+    }
+    if (vorbei.length) html += '<p class="label gross rueckblick">Rückblick</p>';
     var jahr = null;
     vorbei.forEach(function (x) {
       var j = x.s.getFullYear();
