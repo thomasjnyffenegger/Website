@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verein | Camping- und Naturfreunde Türlersee</title>
+<meta name="description" content="Geschichte, Zweck, Vorstand und Mitgliedschaft des Vereins Camping- und Naturfreunde Türlersee.">
+<meta property="og:title" content="Verein | Camping- und Naturfreunde Türlersee">
+<meta property="og:description" content="Geschichte, Zweck, Vorstand und Mitgliedschaft des Vereins Camping- und Naturfreunde Türlersee.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<meta property="og:locale" content="de_CH">
+<link rel="icon" href="assets/img/logo.jpg">
+<link rel="preload" href="assets/fonts/eb-garamond-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Weiter zum Hauptinhalt</a>
+<header class="kopf">
+  <div class="kopf-in">
+    <a class="marke" href="index.html">
+      <img src="assets/img/logo.jpg" alt="Logo Camping Naturfreunde Türlersee" width="84" height="84">
+      <span><span class="marke-name">Camping &amp; Naturfreunde<br>Türlersee</span><span class="marke-claim">i de Natur dihei</span></span>
+    </a>
+    <button class="menu-knopf" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menü"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="verein.html" aria-current="page">Verein</a></li>
+        <li><a href="aktivitaten.html">Aktivitäten</a></li>
+        <li><a href="tuerlersee.html">Türlersee</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="seitenkopf">
+  <div class="wrap schmal">
+    <h1 class="label">Geschichte</h1>
+    <p class="lead" style="font-size:clamp(18px,1.9vw,22px);line-height:1.5">Im Jahr 1974 wollte der Kanton Zürich den damaligen Zeltplatz schliessen, da sich der Campingplatz im Naturschutzgebiet befindet. Um dieses zu verhindern, wurde seinerzeit der Verein Camping- und Naturfreunde Türlersee gegründet. Mit Erfolg kämpfte der Verein jahrelang um das Bestehen des Platzes. Mit dem Kauf des Areals durch die Gemeinde Hausen am Albis ist der Kampf nun ausgestanden und die Betriebskonzession bereitet uns keine Sorgen mehr.<br>Der Verein besteht aber weiterhin.</p>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-text bg-beige">
+    <h2 class="label">Zweck</h2>
+    <p>Unser Ziel ist es, möglichst alle Saison-Camperinnen und Camper in unserem Verein zu haben um so den Zusammenhalt und die Freundschaft zu pflegen.</p>
+  </div>
+  <div class="split-bild"><img src="assets/img/see-sonnenuntergang.jpg" alt="Sonnenuntergang über dem Türlersee" loading="lazy"></div>
+</section>
+
+<section class="split">
+  <div class="split-bild zuerst"><img src="assets/img/vorstand.jpg" alt="Der Vorstand des Vereins, 2025" loading="lazy"></div>
+  <div class="split-text">
+    <h2 class="label">Vorstand</h2>
+    <ul class="vorstand">
+      <li>Thomas Nyffenegger - <strong>Präsident</strong></li>
+      <li>Heinz Wintsch - <strong>Vizepräsident</strong></li>
+      <li>Ernst Nyffenegger - <strong>Kasse</strong></li>
+      <li>Roger Lamm - <strong>Aktuar</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-text bg-salbei">
+    <h2 class="label">Mitglieder</h2>
+    <div class="zahlen">
+      <div class="zahl"><b>105</b><span>aktive Mitglieder (Stand: 2025)</span></div>
+      <div class="zahl"><b>40.-</b><span>Jahresbeitrag</span></div>
+    </div>
+  </div>
+  <div class="split-bild"><img src="assets/img/see-herbst.jpg" alt="Herbstwald spiegelt sich im Türlersee" loading="lazy"></div>
+</section>
+
+<section class="abschnitt" id="anmelden">
+  <div class="wrap">
+    <form class="formular" id="anmeldung">
+      <h2>Anmeldung</h2>
+      <p class="mitte" style="font-family:var(--serif);font-size:19px">Wir freuen uns, dich/euch bei uns im Verein begrüssen zu dürfen.</p>
+      <div class="felder">
+        <label class="feld">Vorname <input name="vorname" autocomplete="given-name"></label>
+        <label class="feld">Nachname <input name="nachname" autocomplete="family-name"></label>
+        <label class="feld breit">E-Mail * <input name="email" type="email" autocomplete="email" required></label>
+        <label class="feld">Handy <input name="handy" type="tel" autocomplete="tel"></label>
+        <label class="feld">Geburtstag <input name="geburtstag" type="date" autocomplete="bday"></label>
+        <label class="feld breit">Adresse <input name="adresse" autocomplete="street-address"></label>
+      </div>
+      <button class="knopf" type="submit">Anmeldung senden</button>
+      <p class="hinweis" id="anmeldung-hinweis" role="status" tabindex="-1" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="fuss">
+  <div class="fuss-kontakt">
+    <p class="label">Kontaktieren Sie uns</p>
+    <h2>Camping- und Naturfreunde Türlersee</h2>
+    <address>Thomas Nyffenegger<br>Türlen 1<br>8915 Hausen am Albis</address>
+  </div>
+  <div class="fuss-links">
+    <ul>
+      <li><a href="verein.html">Verein</a></li>
+      <li><a href="aktivitaten.html">Aktivitäten</a></li>
+      <li><a href="tuerlersee.html">Türlersee</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p>© <span id="jahr">2026</span> Camping- und Naturfreunde Türlersee</p>
+  </div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

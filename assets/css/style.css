@@ -1,0 +1,205 @@
+/* Camping- und Naturfreunde Türlersee */
+@font-face { font-family: "EB Garamond"; src: url("../fonts/eb-garamond-latin-wght-normal.woff2") format("woff2"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Nunito Sans"; src: url("../fonts/nunito-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
+
+:root {
+  --gruen: #3c4938;
+  --gruen-hell: #50614b;
+  --beige: #efebe3;
+  --salbei: #d8dcd6;
+  --rot: #d43a12;
+  --orange: #d58106;
+  --text: #141414;
+  --weiss: #fff;
+  --serif: "EB Garamond", Georgia, serif;
+  --sans: "Avenir Next", Avenir, "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  --rand: clamp(16px, 5vw, 80px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--sans); font-weight: 300; font-size: 17px; line-height: 1.6; color: var(--text); background: var(--weiss); }
+img { max-width: 100%; display: block; }
+a { color: var(--gruen-hell); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+p { margin: 0 0 1em; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--gruen); color: #fff; padding: 10px 16px; z-index: 100; }
+.skip:focus { left: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--rand); }
+.schmal { max-width: 760px; }
+
+/* Kopfzeile */
+.kopf { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid transparent; transition: border-color .2s; }
+.kopf.scrolled { border-color: var(--beige); }
+.kopf-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px var(--rand); max-width: 1760px; margin: 0 auto; }
+.marke { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--gruen-hell); min-width: 0; }
+.marke img { width: 84px; height: 84px; flex: none; }
+.marke-name { font-family: var(--serif); font-size: 22px; line-height: 1.1; display: block; }
+.marke-claim { font-size: 14px; display: block; margin-top: 6px; }
+.nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.nav a { font-weight: 700; font-size: 15px; color: var(--text); text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--gruen-hell); border-color: var(--gruen-hell); }
+.menu-knopf { display: none; background: none; border: 0; padding: 10px; cursor: pointer; }
+.menu-knopf span { display: block; width: 26px; height: 2px; background: var(--gruen); margin: 6px 0; transition: transform .2s, opacity .2s; }
+
+/* Bausteine */
+.label { font-weight: 700; font-size: 15px; letter-spacing: .22em; color: var(--gruen-hell); text-transform: none; margin-bottom: 18px; }
+.label.gross { text-transform: uppercase; }
+.knopf { display: inline-block; font-family: var(--sans); font-weight: 700; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; color: #fff; background: var(--gruen); border: 0; padding: 12px 28px; cursor: pointer; transition: filter .15s, transform .15s; }
+.knopf:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.knopf.rot { background: var(--rot); }
+.knopf.orange { background: var(--orange); color: var(--text); }
+.abschnitt { padding: clamp(48px, 8vw, 96px) 0; }
+.mitte { text-align: center; }
+.lead { font-size: clamp(20px, 2.4vw, 26px); line-height: 1.35; }
+
+/* Startseite: Hero */
+.hero { display: grid; grid-template-columns: 45fr 55fr; min-height: min(78vh, 800px); }
+.hero-text { display: flex; flex-direction: column; justify-content: center; padding: 48px 32px 48px clamp(16px, 8vw, 236px); }
+.hero h1 { font-family: var(--serif); font-size: clamp(40px, 4.6vw, 73px); line-height: .95; letter-spacing: -.01em; margin-bottom: 28px; }
+.hero p { font-size: clamp(22px, 2.6vw, 36px); line-height: 1.2; margin: 0; }
+.hero-bild { position: relative; background: var(--gruen); padding-bottom: clamp(40px, 9vw, 150px); }
+.hero-bild img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Drei Kacheln */
+.kacheln { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 6vw, 96px); }
+.kachel { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.kachel h2 { font-size: 15px; font-weight: 700; letter-spacing: .22em; color: var(--gruen-hell); margin-bottom: 28px; }
+.kachel-bild { width: 100%; aspect-ratio: 1; display: grid; place-items: center; color: #fff; margin-bottom: 30px; transition: transform .25s; }
+.kachel a.kachel-bild:hover { transform: scale(1.02); }
+.kachel-bild svg { width: 64%; height: auto; }
+.kachel p { font-size: 15px; line-height: 2.1; max-width: 300px; flex: 1; }
+.bg-gruen { background: var(--gruen); } .bg-rot { background: var(--rot); } .bg-orange { background: var(--orange); }
+
+/* Galerie */
+.galerie { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(10px, 2.4vw, 30px); }
+.galerie a { display: block; overflow: hidden; height: clamp(180px, 40vw, 510px); }
+.galerie img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.galerie a:hover img { transform: scale(1.04); }
+.g4 { grid-column: span 4; } .g8 { grid-column: span 8; }
+
+/* Zitat */
+.zitat { background: var(--beige); text-align: center; padding: clamp(48px, 8vw, 96px) var(--rand); }
+.zitat-zeichen { display: block; font-family: var(--serif); font-size: 96px; line-height: .6; height: 44px; color: var(--orange); }
+.zitat blockquote { margin: 0 auto; max-width: 680px; font-size: clamp(22px, 3vw, 36px); line-height: 1.22; }
+.band { height: clamp(220px, 34vw, 520px); background: var(--beige) center/cover no-repeat; }
+
+/* Verein: Zweispalter */
+.split { display: grid; grid-template-columns: 1fr 1fr; }
+.split > div { min-height: clamp(320px, 46vw, 660px); }
+.split-text { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 56px var(--rand); }
+.split-text p { max-width: 430px; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.35; }
+.split-bild { position: relative; }
+.split-bild img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bg-beige { background: var(--beige); } .bg-salbei { background: var(--salbei); }
+.vorstand { list-style: none; margin: 0; padding: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.7; }
+.vorstand strong { font-weight: 600; }
+.zahlen { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+.zahl b { display: block; font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1; color: var(--gruen); }
+.zahl span { font-size: 15px; }
+
+/* Formular */
+.formular { max-width: 640px; margin: 0 auto; }
+.formular h2 { font-family: var(--serif); font-size: clamp(34px, 4vw, 48px); text-align: center; margin-bottom: 8px; }
+.felder { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; margin-top: 32px; }
+.feld { display: flex; flex-direction: column; gap: 6px; font-family: var(--serif); font-size: 17px; }
+.feld.breit { grid-column: 1 / -1; }
+.feld input { font: 300 17px var(--sans); padding: 13px 14px; border: 1px solid transparent; background: #f1f1f1; border-radius: 0; width: 100%; }
+.feld input:focus { border-color: var(--gruen); background: #fff; outline: none; }
+.formular .knopf { width: 100%; margin-top: 26px; padding: 16px; background: #2f2e2e; font-family: var(--serif); font-size: 18px; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.hinweis { margin-top: 18px; padding: 16px 18px; background: var(--beige); font-size: 16px; }
+.hinweis[hidden] { display: none; }
+.klein { font-size: 14px; color: #555; }
+
+/* Aktivitäten */
+.seitenkopf { text-align: center; padding: clamp(48px, 8vw, 100px) var(--rand) clamp(32px, 5vw, 60px); }
+.seitenkopf .lead { margin: 0; }
+.jahr { font-family: var(--serif); font-size: 40px; color: var(--gruen); margin: 56px 0 8px; display: flex; align-items: center; gap: 20px; }
+.jahr::after { content: ""; flex: 1; height: 1px; background: var(--salbei); }
+.events { list-style: none; margin: 0; padding: 0; }
+.event { border-bottom: 1px solid var(--salbei); }
+.event summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 96px 1fr auto; gap: 20px; align-items: center; padding: 20px 0; }
+.event summary::-webkit-details-marker { display: none; }
+.event-datum { text-align: center; background: var(--beige); padding: 10px 6px; line-height: 1.1; }
+.event-datum b { display: block; font-family: var(--serif); font-weight: 400; font-size: 34px; }
+.event-datum span { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gruen-hell); }
+.event-titel { font-family: var(--serif); font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15; }
+.event-meta { font-size: 15px; color: #444; margin-top: 4px; }
+.event-pfeil { width: 14px; height: 14px; border-right: 2px solid var(--gruen); border-bottom: 2px solid var(--gruen); transform: rotate(45deg); transition: transform .2s; margin-right: 8px; }
+.event[open] .event-pfeil { transform: rotate(-135deg); }
+.event-inhalt { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: 32px; padding: 6px 0 36px 116px; }
+.event-inhalt.ohne-bild { grid-template-columns: 1fr; }
+.event-inhalt h3 { font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gruen-hell); margin: 18px 0 6px; }
+.event-inhalt h3:first-child { margin-top: 0; }
+.event-inhalt p { white-space: pre-line; margin: 0; }
+.event-bilder { display: grid; gap: 14px; align-content: start; }
+.event.kommend { background: linear-gradient(90deg, rgba(213,129,6,.09), transparent 70%); }
+.marke-neu { display: inline-block; background: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 2px 8px; margin-left: 10px; vertical-align: middle; font-family: var(--sans); }
+.leer { text-align: center; font-family: var(--serif); font-size: 22px; padding: 36px 20px; background: var(--beige); margin: 0; }
+
+/* Türlersee */
+.karten { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.karte { display: block; text-decoration: none; color: var(--text); background: var(--beige); padding: 30px 28px; border-top: 4px solid var(--orange); transition: transform .2s, box-shadow .2s; }
+.karte:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+.karte h2 { font-family: var(--serif); font-size: 28px; margin-bottom: 8px; }
+.karte p { font-size: 16px; margin-bottom: 14px; }
+.karte span { font-weight: 700; font-size: 14px; color: var(--gruen-hell); word-break: break-word; }
+.fakten { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center; margin: 0; }
+.fakten div { margin: 0; }
+.fakten dt { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--gruen-hell); }
+.fakten dd { margin: 4px 0 0; font-family: var(--serif); font-size: 34px; }
+
+/* Textseiten */
+.text h1 { font-size: 15px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gruen-hell); margin-bottom: 30px; }
+.text h2 { font-family: var(--serif); font-size: 28px; margin: 34px 0 10px; }
+
+/* Fusszeile */
+.fuss { display: grid; grid-template-columns: 1fr 1fr; background: var(--beige); }
+.fuss-kontakt { background: var(--gruen); color: var(--beige); padding: clamp(48px, 8vw, 120px) var(--rand) clamp(48px, 7vw, 110px) clamp(16px, 13.7vw, 263px); }
+.fuss-kontakt .label { color: var(--beige); font-size: 18px; text-transform: uppercase; margin-bottom: 44px; }
+.fuss-kontakt h2 { font-family: var(--serif); font-size: clamp(34px, 3.6vw, 48px); line-height: 1.28; margin-bottom: 36px; }
+.fuss-kontakt address { font-family: var(--serif); font-style: normal; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.3; }
+.fuss-links { display: flex; flex-direction: column; justify-content: flex-end; padding: 40px var(--rand) 48px 36px; font-size: 14px; }
+.fuss-links ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 18px; padding: 0; }
+.fuss-links a { color: var(--text); font-weight: 600; text-decoration: none; }
+.fuss-links a:hover { text-decoration: underline; }
+.fuss-links p { margin: 0; }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(20,24,18,.94); display: grid; place-items: center; padding: 24px; cursor: zoom-out; }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 48px); object-fit: contain; }
+.lightbox button { position: absolute; top: 12px; right: 16px; background: none; border: 0; color: #fff; font-size: 40px; line-height: 1; cursor: pointer; padding: 8px 12px; }
+
+@media (max-width: 860px) {
+  .menu-knopf { display: block; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--beige); display: none; }
+  .nav.offen { display: block; }
+  .nav ul { flex-direction: column; gap: 0; padding: 8px var(--rand) 16px; }
+  .nav a { display: block; padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--beige); }
+  .menu-knopf[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-knopf[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-knopf[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .marke img { width: 60px; height: 60px; }
+  .marke-name { font-size: 18px; }
+  .marke-claim { font-size: 12px; margin-top: 3px; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-text { padding: 40px var(--rand); }
+  .hero-bild { padding-bottom: 28px; }
+  .hero-bild img { height: 60vw; }
+  .kacheln { grid-template-columns: 1fr; gap: 56px; }
+  .kachel-bild { max-width: 300px; }
+  .g4, .g8 { grid-column: span 12; }
+  .galerie a { height: 62vw; }
+  .split { grid-template-columns: 1fr; }
+  .split > div { min-height: 0; }
+  .split-bild { aspect-ratio: 4 / 3; }
+  .split .split-bild.zuerst { order: -1; }
+  .felder { grid-template-columns: 1fr; }
+  .event summary { grid-template-columns: 72px 1fr auto; gap: 14px; }
+  .event-datum b { font-size: 28px; }
+  .event-inhalt { grid-template-columns: 1fr; padding-left: 0; }
+  .fuss { grid-template-columns: 1fr; }
+  .fuss-links { padding: 28px var(--rand); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
