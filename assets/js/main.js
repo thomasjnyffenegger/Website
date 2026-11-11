@@ -2,8 +2,8 @@
   "use strict";
 
   /* E-Mail-Adresse, an die das Anmeldeformular geschickt wird.
-     Solange sie leer ist, zeigt das Formular die Postadresse als Alternative. */
-  var ANMELDUNG_EMAIL = "";
+     Ist sie leer, zeigt das Formular die Postadresse als Alternative. */
+  var ANMELDUNG_EMAIL = "thomas.j.nyffenegger@gmail.com";
 
   // Kopfzeile
   var kopf = document.querySelector(".kopf");
