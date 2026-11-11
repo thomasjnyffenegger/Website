@@ -79,13 +79,17 @@
     <form class="formular" id="anmeldung">
       <h2>Anmeldung</h2>
       <p class="mitte" style="font-family:var(--serif);font-size:19px">Wir freuen uns, dich/euch bei uns im Verein begrüssen zu dürfen.</p>
+      <p class="hinweis mitte" style="margin-top:14px"><strong>Bitte pro Person einzeln anmelden</strong> – nicht als Paar. Jede Person füllt ein eigenes Formular aus.</p>
       <div class="felder">
         <label class="feld">Vorname <input name="vorname" autocomplete="given-name"></label>
         <label class="feld">Nachname <input name="nachname" autocomplete="family-name"></label>
         <label class="feld breit">E-Mail * <input name="email" type="email" autocomplete="email" required></label>
         <label class="feld">Handy <input name="handy" type="tel" autocomplete="tel"></label>
         <label class="feld">Geburtstag <input name="geburtstag" type="date" autocomplete="bday"></label>
-        <label class="feld breit">Adresse <input name="adresse" autocomplete="street-address"></label>
+        <label class="feld breit">Strasse <input name="strasse" autocomplete="street-address"></label>
+        <label class="feld">Postleitzahl <input name="plz" inputmode="numeric" autocomplete="postal-code"></label>
+        <label class="feld">Ort <input name="ort" autocomplete="address-level2"></label>
+        <label class="feld breit">Platz Nummer <input name="platz"></label>
       </div>
       <button class="knopf" type="submit">Anmeldung senden</button>
       <p class="hinweis" id="anmeldung-hinweis" role="status" tabindex="-1" hidden></p>

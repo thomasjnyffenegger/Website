@@ -100,7 +100,7 @@
       ev.preventDefault();
       var f = new FormData(form);
       var zeilen = ["Anmeldung Camping- und Naturfreunde Türlersee", ""];
-      [["Vorname", "vorname"], ["Nachname", "nachname"], ["E-Mail", "email"], ["Handy", "handy"], ["Geburtstag", "geburtstag"], ["Adresse", "adresse"]].forEach(function (p) {
+      [["Vorname", "vorname"], ["Nachname", "nachname"], ["E-Mail", "email"], ["Handy", "handy"], ["Geburtstag", "geburtstag"], ["Strasse", "strasse"], ["Postleitzahl", "plz"], ["Ort", "ort"], ["Platz Nummer", "platz"]].forEach(function (p) {
         zeilen.push(p[0] + ": " + (f.get(p[1]) || ""));
       });
       hinweis.hidden = false;
