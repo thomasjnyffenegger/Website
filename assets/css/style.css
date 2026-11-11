@@ -92,6 +92,11 @@ p { margin: 0 0 1em; }
 .split-bild { position: relative; }
 .split-bild img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .bg-beige { background: var(--beige); } .bg-salbei { background: var(--salbei); }
+.vorstand-bereich { text-align: center; padding: clamp(48px, 7vw, 88px) var(--rand); }
+.vorstand-bild { display: block; max-width: 1200px; margin: 0 auto 36px; cursor: zoom-in; }
+.vorstand-bild img { width: 100%; height: auto; }
+.vorstand-bereich .vorstand li { white-space: nowrap; }
+.vorstand-bereich .vorstand { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4px 32px; max-width: 1000px; margin: 0 auto; }
 .vorstand { list-style: none; margin: 0; padding: 0; font-size: clamp(18px, 1.9vw, 22px); line-height: 1.7; }
 .vorstand strong { font-weight: 600; }
 .zahlen { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
